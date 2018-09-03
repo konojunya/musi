@@ -17,9 +17,8 @@ func GetRouter() *gin.Engine {
 	r.LoadHTMLGlob("views/*")
 
 	r.GET("/", func(c *gin.Context) {
-		c.JSON(http.StatusOK, gin.H{
-			"hoge": "hoge",
-		})
+		c.HTML(http.StatusOK, "index.html", nil)
 	})
+
 	return r
 }
