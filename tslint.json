@@ -1,0 +1,20 @@
+{
+  "rulesDirectory": ["tslint-plugin-prettier"],
+  "extends": [
+    "tslint:recommended",
+    "tslint-react",
+    "tslint-config-prettier"
+  ],
+  "rules": {
+    "prettier": true,
+    "interface-name": [true, "never-prefix"],
+    "no-var-requires": false,
+    "object-literal-sort-keys": false,
+    "no-namespace": false,
+    "no-shadowed-variable": false,
+    "max-classes-per-file": false,
+    "member-ordering": false,
+    "variable-name": false,
+    "no-empty-interface": false
+  }
+}
