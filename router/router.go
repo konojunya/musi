@@ -1,9 +1,8 @@
 package router
 
 import (
-	"net/http"
-
 	"github.com/gin-gonic/gin"
+	"github.com/konojunya/musi/controller"
 )
 
 func GetRouter() *gin.Engine {
@@ -16,9 +15,9 @@ func GetRouter() *gin.Engine {
 
 	r.LoadHTMLGlob("views/*")
 
-	r.GET("/", func(c *gin.Context) {
-		c.HTML(http.StatusOK, "index.html", nil)
-	})
+	r.GET("/", controller.Index)
+	r.GET("/login", controller.Login)
+	r.GET("/oauth", controller.OAuth)
 
 	return r
 }
