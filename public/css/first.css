@@ -1,0 +1,133 @@
+body, html {
+  width: 100%;
+  height: 100%;
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/**
+ * header
+ */
+header {
+  width: 100%;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+header .img {
+  width: 30px;
+}
+header .logo-text {
+  width: 60px;
+}
+header .img img,
+header .logo-text img  {
+  display: block;
+  width: 100%;
+}
+
+/**
+ * login-box
+ */
+.login-box {
+  padding: 50px 0 80px;
+  width: 100%;
+  height: 100vh;
+  background-image: url(https://www.scdn.co/i/home/jp/dj.jpg);
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+.login-box h1 {
+  font-weight: bold;
+  color: white;
+  letter-spacing: 1.3px;
+  text-align: center;
+  margin: 30px 0;
+}
+.login-box a {
+  display: block;
+  width: 150px;
+  text-align: center;
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  background-color: white;
+  padding: 15px;
+  border-radius: 25px;
+  margin: 0 auto;
+}
+.login-box .artwork-box {
+  overflow-x: scroll;
+  -webkit-overflow-scrolling: touch;
+  display: flex;
+  width: 95%;
+  margin: 100px auto;
+}
+.login-box .artwork-box .img {
+  max-width: 40vw;
+  min-width: 40vw;
+  margin: 0 1vw 0 0;
+  background-color: #FFF;
+}
+.login-box .artwork-box .img img {
+  display: block;
+  width: 100%;
+}
+
+/**
+ * box
+ */
+.box {
+  width: 100%;
+  height: 80vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.box .cover {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.3);
+  padding: 0 15px;
+  letter-spacing: 1.4px;
+}
+.box h2 {
+  padding-top: 200px;
+  padding-bottom: 10px;
+  font-size: 1.5rem;
+  color: white;
+}
+.box p {
+  color: white;
+}
+
+.first-box {
+  background-position: right center;
+  background-image: url(http://www.scdn.co/i/home/jp/peace.jpg);
+}
+.second-box {
+  background-image: url(http://www.scdn.co/i/home/jp/concert.jpg);
+}
+
+/**
+ * footer
+ */
+footer {
+  background-color: black;
+}
+footer small {
+  display: block;
+  text-align: center;
+  color: white;
+  font-size: 12px;
+  padding: 5px 0;
+}

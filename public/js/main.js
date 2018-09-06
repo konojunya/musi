@@ -19,5 +19,11 @@ new Vue({
   },
   data: {
     city: "読み込み中...",
+  },
+  methods: {
+    logout() {
+      document.cookie = "musi-token=; max-age=0";
+      location.reload()
+    }
   }
 })

@@ -7,9 +7,9 @@ import (
 )
 
 func Index(c *gin.Context) {
-	cookie, err := c.Cookie("musi-token")
-	if (err != nil) || (cookie == "") {
-		c.HTML(http.StatusInternalServerError, "first.html", nil)
+	cookie, _ := c.Cookie("musi-token")
+	if cookie == "" {
+		c.HTML(http.StatusOK, "first.html", nil)
 		return
 	}
 
