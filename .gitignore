@@ -28,3 +28,4 @@ dist
 .env
 
 public/js/bundle.js
+.DS_Store
