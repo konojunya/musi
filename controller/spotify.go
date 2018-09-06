@@ -2,8 +2,10 @@ package controller
 
 import (
 	"net/http"
+	"strconv"
 
 	"github.com/gin-gonic/gin"
+	"github.com/konojunya/musi/model"
 	"github.com/konojunya/musi/service"
 )
 
@@ -30,7 +32,28 @@ func GetPlayList(c *gin.Context) {
 		return
 	}
 
-	c.JSON(http.StatusOK, gin.H{
-		"hoge": "hoge",
-	})
+	lat, err := strconv.ParseFloat(c.Query("latitude"), 64)
+	if err != nil {
+		c.AbortWithStatus(http.StatusBadRequest)
+		return
+	}
+
+	lng, err := strconv.ParseFloat(c.Query("longitude"), 64)
+	if err != nil {
+		c.AbortWithStatus(http.StatusBadRequest)
+		return
+	}
+
+	location := model.GeoLocation{
+		Longitude: lng,
+		Latitude:  lat,
+	}
+
+	playlist, err := service.GetTracks(cookie, location)
+	if err != nil {
+		c.AbortWithStatus(http.StatusInternalServerError)
+		return
+	}
+
+	c.JSON(http.StatusOK, playlist)
 }

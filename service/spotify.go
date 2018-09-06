@@ -2,16 +2,30 @@ package service
 
 import (
 	"encoding/json"
+	"fmt"
 	"io/ioutil"
 	"net/http"
 	"net/url"
 
+	owm "github.com/briandowns/openweathermap"
+
 	"github.com/konojunya/musi/model"
 )
 
-func GetTracks(token string) (*model.PlayList, error) {
+func GetTracks(token string, location model.GeoLocation) (*model.Response, error) {
+	// weather
+	w, err := owm.NewCurrent("F", "EN", openweatherAPIKey)
+	if err != nil {
+		return nil, err
+	}
+	w.CurrentByCoordinates(&owm.Coordinates{
+		Longitude: location.Longitude,
+		Latitude:  location.Latitude,
+	})
+	fmt.Println(w.Name)
+
 	values := url.Values{}
-	values.Add("q", "hello")
+	values.Add("q", w.Weather[0].Main)
 	values.Add("type", "playlist")
 	req, _ := http.NewRequest("GET", "https://api.spotify.com/v1/search", nil)
 	req.URL.RawQuery = values.Encode()
@@ -27,8 +41,13 @@ func GetTracks(token string) (*model.PlayList, error) {
 		return nil, err
 	}
 
-	var playlist *model.PlayList
+	var playlist model.PlayList
 	json.Unmarshal(b, &playlist)
 
-	return playlist, nil
+	response := &model.Response{
+		CityName: w.Name,
+		Playlist: playlist,
+	}
+
+	return response, nil
 }

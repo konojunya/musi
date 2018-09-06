@@ -8,7 +8,8 @@ import (
 )
 
 var (
-	config oauth2.Config
+	openweatherAPIKey string
+	config            oauth2.Config
 )
 
 func init() {
@@ -16,6 +17,8 @@ func init() {
 	if err != nil {
 		panic(err)
 	}
+
+	openweatherAPIKey = os.Getenv("openweather")
 
 	config = oauth2.Config{
 		ClientID:     os.Getenv("client_id"),

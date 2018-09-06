@@ -1,5 +1,15 @@
 package model
 
+type Response struct {
+	CityName string   `json:"city_name"`
+	Playlist PlayList `json:"playlist"`
+}
+
+type GeoLocation struct {
+	Latitude  float64 `json:"latitude"`
+	Longitude float64 `json:"longitude"`
+}
+
 type PlayList struct {
 	Playlists struct {
 		Href  string `json:"href"`
