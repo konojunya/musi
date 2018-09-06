@@ -1,13 +1,15 @@
 package service
 
 import (
-	"fmt"
+	"encoding/json"
 	"io/ioutil"
 	"net/http"
 	"net/url"
+
+	"github.com/konojunya/musi/model"
 )
 
-func GetTracks(token string) error {
+func GetTracks(token string) (*model.PlayList, error) {
 	values := url.Values{}
 	values.Add("q", "hello")
 	values.Add("type", "playlist")
@@ -17,15 +19,16 @@ func GetTracks(token string) error {
 	client := &http.Client{}
 	resp, err := client.Do(req)
 	if err != nil {
-		return err
+		return nil, err
 	}
 	defer resp.Body.Close()
 	b, err := ioutil.ReadAll(resp.Body)
 	if err != nil {
-		return err
+		return nil, err
 	}
 
-	fmt.Println(string(b))
+	var playlist *model.PlayList
+	json.Unmarshal(b, &playlist)
 
-	return nil
+	return playlist, nil
 }

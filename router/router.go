@@ -18,6 +18,7 @@ func GetRouter() *gin.Engine {
 	r.GET("/", controller.Index)
 	r.GET("/login", controller.Login)
 	r.GET("/oauth", controller.OAuth)
+	r.GET("/api/tracks", controller.GetPlayList)
 
 	return r
 }

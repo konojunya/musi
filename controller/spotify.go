@@ -23,3 +23,9 @@ func OAuth(c *gin.Context) {
 	c.SetCookie("musi-token", token.AccessToken, 1000*60, "/", "http://localhost:4000", false, false) // debug
 	c.Redirect(http.StatusTemporaryRedirect, "/")
 }
+
+func GetPlayList(c *gin.Context) {
+	c.JSON(http.StatusOK, gin.H{
+		"hoge": "hoge",
+	})
+}
