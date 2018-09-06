@@ -19,12 +19,17 @@ func OAuth(c *gin.Context) {
 		return
 	}
 
-	// c.SetCookie("musi-token", token.AccessToken, 1000*60*60*24*7, "/", "http://localhost:4000", false, false)
-	c.SetCookie("musi-token", token.AccessToken, 1000*60, "/", "http://localhost:4000", false, false) // debug
+	c.SetCookie("musi-token", token.AccessToken, 1000*60*60*24*7, "/", "http://localhost:4000", false, false)
 	c.Redirect(http.StatusTemporaryRedirect, "/")
 }
 
 func GetPlayList(c *gin.Context) {
+	cookie, _ := c.Cookie("musi-token")
+	if cookie == "" {
+		c.AbortWithStatus(http.StatusUnauthorized)
+		return
+	}
+
 	c.JSON(http.StatusOK, gin.H{
 		"hoge": "hoge",
 	})

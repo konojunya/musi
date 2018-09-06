@@ -5,6 +5,10 @@ import (
 	"github.com/konojunya/musi/controller"
 )
 
+/**
+ * GetRouter
+ * root router
+ */
 func GetRouter() *gin.Engine {
 	r := gin.Default()
 
