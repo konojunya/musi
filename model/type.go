@@ -3,6 +3,7 @@ package model
 type Response struct {
 	CityName string   `json:"city_name"`
 	Playlist PlayList `json:"playlist"`
+	Weather  string   `json:"weather"`
 }
 
 type GeoLocation struct {

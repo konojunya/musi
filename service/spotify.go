@@ -45,6 +45,7 @@ func GetTracks(token string, location model.GeoLocation) (*model.Response, error
 	response := &model.Response{
 		CityName: w.Name,
 		Playlist: playlist,
+		Weather:  w.Weather[0].Main,
 	}
 
 	return response, nil
