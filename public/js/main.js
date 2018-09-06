@@ -11,14 +11,22 @@ new Vue({
             longitude
           }
         });
-        console.log(res.data);
         this.city = res.data.city_name;
+        this.playlists = res.data.playlist.playlists.items
+        this.loading = false
       },
       err => console.error(err)
     )
   },
   data: {
+    loading: true,
     city: "読み込み中...",
+    playlists: []
+  },
+  watch: {
+    playlists() {
+      console.log(this.playlists[0])
+    }
   },
   methods: {
     logout() {

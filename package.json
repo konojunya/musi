@@ -1,0 +1,40 @@
+{
+  "name": "@konojunya/musi",
+  "version": "1.0.0",
+  "description": "🎶 A service to search for songs from spotify by weather.",
+  "main": "webpack.config.js",
+  "scripts": {
+    "build": "webpack --color --progress --mode=production",
+    "build:watch": "npm run build -- --watch --mode=production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/konojunya/musi.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/konojunya/musi/issues"
+  },
+  "homepage": "https://github.com/konojunya/musi#readme",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "vue": "^2.5.17"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.0.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.0.2",
+    "babel-preset-env": "^1.7.0",
+    "cross-env": "^5.2.0",
+    "css-loader": "^1.0.0",
+    "node-sass": "^4.9.3",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.0",
+    "vue-loader": "^14.2.2",
+    "vue-template-compiler": "^2.5.17",
+    "webpack": "^4.17.2",
+    "webpack-cli": "^3.1.0"
+  }
+}

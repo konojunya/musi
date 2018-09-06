@@ -2,7 +2,6 @@ package service
 
 import (
 	"encoding/json"
-	"fmt"
 	"io/ioutil"
 	"net/http"
 	"net/url"
@@ -22,7 +21,6 @@ func GetTracks(token string, location model.GeoLocation) (*model.Response, error
 		Longitude: location.Longitude,
 		Latitude:  location.Latitude,
 	})
-	fmt.Println(w.Name)
 
 	values := url.Values{}
 	values.Add("q", w.Weather[0].Main)
