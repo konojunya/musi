@@ -10,6 +10,10 @@
 
 To you who is always tired of listening to the same music :)
 
+## Deploy URL
+
+https://musi-app.now.sh/
+
 ## screenshots
 
 ![](https://user-images.githubusercontent.com/12035578/45177297-8a75c500-b24d-11e8-852b-08069168d8e5.gif)

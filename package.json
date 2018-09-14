@@ -5,6 +5,7 @@
   "main": "webpack.config.js",
   "scripts": {
     "build": "webpack -p --mode=development",
+    "build:prod": "webpack -p --mode=production",
     "lint": "tslint -c tslint.json -p tsconfig.json -t verbose 'src/**/*.{ts,tsx}'"
   },
   "repository": {

@@ -26,6 +26,8 @@ dist
 
 *.pem
 .env
-
+cmd/
 public/js/bundle.js
 .DS_Store
+
+vendor/

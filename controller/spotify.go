@@ -21,7 +21,7 @@ func OAuth(c *gin.Context) {
 		return
 	}
 
-	c.SetCookie("musi-token", token.AccessToken, 1000*60*60*24*7, "/", "http://localhost:4000", false, false)
+	c.SetCookie("musi-token", token.AccessToken, 1000*60*60*24*7, "/", "https://musi-app.now.sh", false, false)
 	c.Redirect(http.StatusTemporaryRedirect, "/")
 }
 
