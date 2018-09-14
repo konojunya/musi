@@ -27,7 +27,7 @@ func init() {
 			AuthURL:  "https://accounts.spotify.com/authorize",
 			TokenURL: "https://accounts.spotify.com/api/token",
 		},
-		RedirectURL: "http://localhost:4000/oauth",
+		RedirectURL: "https://musi-app.now.sh/oauth",
 		Scopes:      []string{"playlist-modify", "user-read-private", "user-library-read"},
 	}
 }
